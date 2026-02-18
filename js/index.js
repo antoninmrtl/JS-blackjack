@@ -3,14 +3,18 @@ let secondCard = 11
 let sum = firstCard + secondCard
 let hasBJ = false;
 let isAlive = true;
+let message = "";
+const buttonStart = document.getElementById('start')
+buttonStart.addEventListener('click', function(){
+    console.log(message)
+})
 
 if(sum <= 20){
-    console.log('Do you want to draw a new card?')
+    message = 'Do you want to draw a new card?';
 }else if(sum === 21){
-    console.log('BJ !')
+    message = 'BJ !';
     hasBJ = true;
 }else {
-    console.log("You\'re out of the game!")
+    message = 'You\'re out of the game!';
     isAlive = false
-
 }
