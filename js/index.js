@@ -15,7 +15,10 @@ const buttonStart = document.getElementById('start')
 buttonStart.addEventListener('click', startGame)
 
 function startGame(){
-    messageEl.innerText= message;
+    renderGame()
+}
+
+function renderGame(){
     sumEl.innerText = `Sum: ${sum}`
     if(thirdCard === undefined){
         cardEl.innerText = `Cards: ${firstCard}  ${secondCard}`
@@ -23,21 +26,28 @@ function startGame(){
         cardEl.innerText = `Cards: ${firstCard}  ${secondCard}  ${thirdCard}`
     }
 
+    if(sum <= 20){
+        message = 'Do you want to draw a new card?';
+    }else if(sum === 21){
+        message = 'BJ !';
+        hasBJ = true;
+    }else {
+        message = 'You\'re out of the game!';
+        isAlive = false
+    }
+
+    messageEl.innerText= message;
+
 }
 
 const buttonCard = document.getElementById('newCard')
-buttonCard.addEventListener('click', function(){
+buttonCard.addEventListener('click', newCard)
+
+
+function newCard(){
     thirdCard = 2
     sum += thirdCard
-    startGame()
-})
-
-if(sum <= 20){
-    message = 'Do you want to draw a new card?';
-}else if(sum === 21){
-    message = 'BJ !';
-    hasBJ = true;
-}else {
-    message = 'You\'re out of the game!';
-    isAlive = false
+    renderGame()
 }
+
+
