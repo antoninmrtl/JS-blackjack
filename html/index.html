@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script defer src="../js/index.js"></script>
-    <title>BlackJack</title>
+    <link rel="stylesheet" href="../assets/styles/index.css">
+    <title>BJ</title>
 </head>
-<body class="bg-black text-white font-mono">
-<header class="flex justify-center">
-    <h1 class="text-[5rem] text-amber-300 text-bold">Blackjack Game</h1>
-</header>
-<main class="flex flex-col items-center gap-10 mt-15 text-[2rem] text-semibold">
-    <p id="message-el" class="italic">Want to play a round?</p>
-    <p id="card-el">Cards:</p>
+<body>
+    <h1>Blackjack</h1>
+    <p id="message-el">Want to play a round?</p>
+    <p id="cards-el">Cards:</p>
     <p id="sum-el">Sum:</p>
-    <button type="button" id="start" class="cursor-pointer border border-amber-300 rounded-xl p-2">START GAME</button>
-    <button type="button" id="newCard" class="cursor-pointer border border-amber-300 rounded-xl p-2">NEW CARD</button>
-
-</main>
-<footer></footer>
+    <button onclick="startGame()">START GAME</button>
+    <button onclick="newCard()">NEW CARD</button>
+    <p id="player-el"></p>
+    <script src="../js/index.js"></script>
 </body>
 </html>
